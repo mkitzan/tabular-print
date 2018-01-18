@@ -2,8 +2,8 @@ def border(max_lens, edge):
     return "".join([edge + "-"*i for i in max_lens]) + edge
 
 
-def printer(values, val_bufs):
-    print("|" + "|".join([str(values[i]) + " " * val_bufs[i] for i in range(len(values))]) + "|")
+def make_row(values, val_bufs):
+    return "|" + "|".join([str(values[i]) + " " * val_bufs[i] for i in range(len(values))]) + "|"
 
 
 def buffers(columns, values, buffer):
@@ -21,16 +21,13 @@ def buffers(columns, values, buffer):
     return [[max_lens[i]+buffer - el[i] for i in range(len(el))] for el in val_lens], [i+buffer for i in max_lens]
 
 
-def table(columns, values, edge="*", buffer=1):
+def table(columns, values, edge="*", buffer=1, funct=print):
     val_bufs, max_lens = buffers(columns, values, buffer)
-
     tb_border = border(max_lens, edge)
-
-    print(tb_border)
-    printer(columns, val_bufs[0])
-    print(tb_border)
+    
+    funct(tb_border + "\n" + make_row(columns, val_bufs[0]) + "\n" + tb_border)
 
     for i in range(len(values)):
-        printer(values[i], val_bufs[i + 1])
+        funct(make_row(values[i], val_bufs[i + 1]))
 
-    print(tb_border)
+    funct(tb_border)
