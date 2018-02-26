@@ -6,12 +6,12 @@ def buffers(columns, values, buffer):
     max_lens = [len(str(i)) for i in columns]
     val_lens = [[i for i in max_lens]]
 
-    for i in values:
+    for el in values:
         cur_lens = []
-        for j in range(len(i)):
-            cur_lens.append(len(str(i[j])))
-            if cur_lens[j] > max_lens[j]:
-                max_lens[j] = cur_lens[j]
+        for i in range(len(el)):
+            cur_lens.append(len(str(el[i])))
+            if cur_lens[i] > max_lens[i]:
+                max_lens[i] = cur_lens[i]
         val_lens.append(cur_lens)
 
     return [[max_lens[i]+buffer - el[i] for i in range(len(el))] for el in val_lens], [i+buffer for i in max_lens]
