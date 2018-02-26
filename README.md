@@ -10,7 +10,7 @@ For a standard table use
 
     table(col_labels, values)
 
-For an augmented table use the expected arguments, and any combination of the three non-standard arguments
+For an augmented table use the expected arguments, and any combination of the four non-standard arguments
 
     table(col_labels, values, edge="#", buffer=2, transpose=True, funct=lambda x: out_file.write(x + "\n"))
     
