@@ -1,7 +1,3 @@
-def border(max_lens, edge):
-    return "".join([edge + "-"*i for i in max_lens]) + edge
-
-
 def make_row(values, val_bufs):
     return "|" + "|".join([str(values[i]) + " " * val_bufs[i] for i in range(len(values))]) + "|"
 
@@ -21,9 +17,12 @@ def buffers(columns, values, buffer):
     return [[max_lens[i]+buffer - el[i] for i in range(len(el))] for el in val_lens], [i+buffer for i in max_lens]
 
 
-def table(columns, values, edge="*", buffer=1, funct=print):
+def table(columns, values, edge="*", buffer=1, transpose=False, funct=print):
+    if transpose:
+        values = [list(el) for el in zip(*values)]
+    
     val_bufs, max_lens = buffers(columns, values, buffer)
-    tb_border = border(max_lens, edge)
+    tb_border = "".join([edge + "-"*i for i in max_lens]) + edge
     
     funct(tb_border + "\n" + make_row(columns, val_bufs[0]) + "\n" + tb_border)
 
