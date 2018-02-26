@@ -22,11 +22,11 @@ def table(columns, values, edge="*", buffer=1, transpose=False, funct=print):
         values = [list(el) for el in zip(*values)]
     
     val_bufs, max_lens = buffers(columns, values, buffer)
-    tb_border = "".join([edge + "-"*i for i in max_lens]) + edge
+    border = "".join([edge + "-"*i for i in max_lens]) + edge
     
-    funct(tb_border + "\n" + make_row(columns, val_bufs[0]) + "\n" + tb_border)
+    funct(border + "\n" + make_row(columns, val_bufs[0]) + "\n" + border)
 
     for i in range(len(values)):
         funct(make_row(values[i], val_bufs[i + 1]))
 
-    funct(tb_border)
+    funct(border)
