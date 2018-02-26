@@ -12,11 +12,13 @@ For a standard table use
 
 For a an augmented table use the expected arguments, and any permutation of the three non-standard arguments
 
-    table(col_labels, results_set, edge="#", buffer=2, funct=lambda x: out_file.write(x + "\n"))
+    table(col_labels, results_set, edge="#", buffer=2, transpose=True, funct=lambda x: out_file.write(x + "\n"))
     
 # Non-Standard Arguments
 - edge (default "\*"): when a horizontal line ("-") intersects a vertical line ("|") in the table, an edge character is placed. By default a star is used, but by including an argument for edge when table is called, you can augment what this character is.
 
 - buffer (default 1): buffer declares the amount of whitespace between the end of the longest value in a column and that column's right vertical divider. Example: |example of buffer=1 |
+
+- transpose (default False): will transpose the results_set argument if the transpose=True. Helpful if a row in your results_set corresponds to a row in the table rather than the expected row in results_set = col in table (format of a sqlite3 fetchall call)
 
 - funct (default print): allows user to write the output of dataprint to a file, or call some function with the dataprint row.
