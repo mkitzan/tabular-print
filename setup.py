@@ -1,14 +1,18 @@
 #!/usr/bin/ python3
 # -*- coding: utf-8 -*-
 
-
+import os
 from setuptools import find_packages, setup
 
 
+with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
+    README = readme.read()
+
+
 setup(name="tabular-print",
-      version="1.0.0a1",
+      version="1.0.3a1",
       description="Lightweight, tabular data, printing module for Python.",
-      long_description="README.md",
+      long_description=README,
       author="Michael Kitzan",
       author_email="mkitzan45@gmail.com",
       url="https://github.com/mkitzan/tabular-print",
