@@ -5,7 +5,7 @@
 from setuptools import find_packages, setup
 
 
-setup(name="Dataprint",
+setup(name="dataprint",
       version="1.0.0",
       description="Lightweight, tabular data, printing module for Python.",
       long_description="README.md",
