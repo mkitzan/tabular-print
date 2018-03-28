@@ -17,16 +17,16 @@ def buffers(columns, values, buffer):
     return [[max_lens[i]+buffer - el[i] for i in range(len(el))] for el in val_lens], [i+buffer for i in max_lens]
 
 
-def table(columns, values, edge="*", buffer=1, transpose=False, funct=print):
+def table(columns, values, edge="*", buffer=1, transpose=False, printer=print):
     if transpose:
         values = [list(el) for el in zip(*values)]
     
     val_bufs, max_lens = buffers(columns, values, buffer)
     border = "".join([edge + "-"*i for i in max_lens]) + edge
     
-    funct(border + "\n" + make_row(columns, val_bufs[0]) + "\n" + border)
+    printer(border + "\n" + make_row(columns, val_bufs[0]) + "\n" + border)
 
     for i in range(len(values)):
-        funct(make_row(values[i], val_bufs[i + 1]))
+        printer(make_row(values[i], val_bufs[i + 1]))
 
-    funct(border)
+    printer(border)
