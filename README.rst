@@ -1,7 +1,7 @@
-Dataprint
-=========
+Tabular Print
+=============
 
-Dataprint prints a table that scales column widths to fit the data.
+tabular-print prints a table that scales column widths to fit the data.
 Written to mesh with the sqlite3 python module, specifically
 cursor.description (list comp-ed to only have the column labels), and
 cursor.fetchall(). Each row in the values list is treated as a row of
@@ -34,11 +34,11 @@ A redacted example from a side project of mine (https://github.com/mkitzan/termi
 Usage
 =====
 
-First import the function 'table' from dataprint
+First import the function 'table' from tabular-print
 
 ::
 
-    from dataprint import table
+    from tabular-print import table
 
 For a standard table use
 
@@ -73,7 +73,7 @@ Non-Standard Arguments
    between the end of the longest value in a column and that column's
    right vertical divider. Example: \|example of buffer=1 \|
 
--  printer (default print): allows user to write the output of dataprint
-   to a file, or call some function with each line of dataprint's output
-   as an argument. Each line of output is a string, so be sure your
-   function takes that into account.
+-  printer (default print): allows user to write the output of
+   tabular-print to a file, or call some function with each line of
+   tabular-print's output as an argument. Each line of output is a
+   string, so be sure your function takes that into account.

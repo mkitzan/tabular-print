@@ -5,8 +5,8 @@
 from setuptools import find_packages, setup
 
 
-setup(name="dataprint",
-      version="1.0.0",
+setup(name="tabular-print",
+      version="1.0.0a1",
       description="Lightweight, tabular data, printing module for Python.",
       long_description="README.md",
       author="Michael Kitzan",
