@@ -1,7 +1,7 @@
 Tabular Print
 =============
 
-tabular-print prints a table that scales column widths to fit the data.
+tabular print prints a table that scales column widths to fit the data.
 Written to mesh with the sqlite3 python module, specifically
 cursor.description (list comp-ed to only have the column labels), and
 cursor.fetchall(). Each row in the values list is treated as a row of
@@ -34,11 +34,11 @@ A redacted example from a side project of mine (https://github.com/mkitzan/termi
 Usage
 =====
 
-First import the function 'table' from tabular-print
+First import the function 'table' from tabular print
 
 ::
 
-    from tabular_print import table
+    from tabularprint import table
 
 For a standard table use
 

@@ -10,7 +10,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
 
 
 setup(name="tabular-print",
-      version="1.0.3a1",
+      version="1.0.6a1",
       description="Lightweight, tabular data, printing module for Python.",
       long_description=README,
       author="Michael Kitzan",
