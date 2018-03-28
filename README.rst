@@ -38,7 +38,7 @@ First import the function 'table' from tabular-print
 
 ::
 
-    from tabular-print import table
+    from tabular_print import table
 
 For a standard table use
 
